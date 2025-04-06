@@ -6,7 +6,6 @@ const sevice = {
     const detections = detectionsData.map(d => createFromData(d));
     return {
       ok: true,
-      x: 'kkkk',
       message: [...detections]
     }
   },
