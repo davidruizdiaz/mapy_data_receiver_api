@@ -1,17 +1,20 @@
 const sevice = require("../aplication/detectionService");
 
+/**
+ * Implementa las rutas para /detections
+ */
 module.exports = function(fastify, opts, done) {
   fastify.post('/add', (request, reply) => {
     try {
       const { detections: detectionsData } = request.body;
       if (!detectionsData || detectionsData.length === 0) {
-        throw new Error('[Presentation] Error en los datos recibidos');
+        throw new Error('[Presentation] Se recibieron datos vacíos');
       }
       const result = sevice.addDetections(detectionsData);
       reply.send(result);
     } catch (error) {
       fastify.log.error(error)
-      res.code(500).send({
+      reply.code(500).send({
         ok: false,
         error: error.message
       });

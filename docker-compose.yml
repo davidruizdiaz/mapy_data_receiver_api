@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  oracle-db:
+    image: truevoly/oracle-12c:latest
+    container_name: oracle12c
+    ports:
+      - "1521:1521"
+      - "8080:8080"
+    environment:
+      - DBCA_TOTAL_MEMORY=1024
+    volumes:
+      - ${ORACLE_DATA_PATH}:/u01/app/oracle
+    restart: "no"

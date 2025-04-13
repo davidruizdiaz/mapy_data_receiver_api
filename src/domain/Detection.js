@@ -4,7 +4,7 @@ class Detection {
     this.clase = clase;
     this.fecha = fecha;
   }
-  static createFromData(data) {
+  static createDetectioFromData(data) {
     if (!data.id_zona || !data.clase || !data.fecha) {
       throw new Error('[DOMAIN] Los datos no corresponden a una detección');
     }
