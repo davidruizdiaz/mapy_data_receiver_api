@@ -2,9 +2,9 @@ class Detection {
   constructor(id_zona, clase, fecha) {
     this.id_zona = id_zona;
     this.clase = clase;
-    this.fecha = fecha;
+    this.fecha = new Date(fecha);
   }
-  static createDetectioFromData(data) {
+  static createDetectionFromData(data) {
     if (!data.id_zona || !data.clase || !data.fecha) {
       throw new Error('[DOMAIN] Los datos no corresponden a una detección');
     }

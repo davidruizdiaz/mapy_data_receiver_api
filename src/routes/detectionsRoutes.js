@@ -1,16 +1,13 @@
-const sevice = require("../aplication/detectionService");
+const sevice = require("../services/detectionsService");
 
 /**
  * Implementa las rutas para /detections
  */
 module.exports = function(fastify, opts, done) {
-  fastify.post('/add', (request, reply) => {
+  fastify.post('/add', async (request, reply) => {
     try {
       const { detections: detectionsData } = request.body;
-      if (!detectionsData || detectionsData.length === 0) {
-        throw new Error('[Presentation] Se recibieron datos vacíos');
-      }
-      const result = sevice.addDetections(detectionsData);
+      const result = await sevice.addDetections(detectionsData);
       reply.send(result);
     } catch (error) {
       fastify.log.error(error)
