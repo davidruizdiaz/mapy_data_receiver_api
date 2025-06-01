@@ -19,9 +19,10 @@ const sevice = {
     } catch (err) {
       const error = '[SERVICE] Error inesperado al procesar los datos'
       console.log(error, { cause: err.message })
-      throw new Error(error);
+      throw new Error(`${error} - ${err.message}`);
     }
   },
+
   getLastDetectionService: async () => {
     try {
       const detection = await getLastDetection();
@@ -37,7 +38,7 @@ const sevice = {
     } catch (err) {
       const error = '[SERVICE] Error inesperado al procesar los datos'
       console.log(error, { cause: err.message })
-      throw new Error(error);
+      throw new Error(`${error} - ${err.message}`);
     }
   },
 };
