@@ -1,5 +1,7 @@
 # other
 initdb.sh
+*.sql
+
 # Logs
 logs
 *.log

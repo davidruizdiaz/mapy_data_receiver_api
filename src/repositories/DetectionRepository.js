@@ -15,6 +15,18 @@ const insertBatchDetections = async (detections) => {
   }
 };
 
+const getLastDetection = async () => {
+  try {
+    const detection = await db('detections').orderBy('fecha', 'desc').first();
+    return detection || null;
+  } catch (err) {
+    const error = '[REPOSITORY] Error al recuperar los datos';
+    console.log(error, err.message);
+    throw new Error(error);
+  }
+}
+
 module.exports = {
   insertBatchDetections,
+  getLastDetection,
 }
