@@ -17,7 +17,7 @@ module.exports = function(fastify, opts, done) {
       });
     }
   });
-  fastify.get('/getLastTransaction', async (request, reply) => {
+  fastify.post('/getLastTransaction', async (request, reply) => {
     try {
       const result = await sevice.getLastDetectionService();
       reply.send(result);
