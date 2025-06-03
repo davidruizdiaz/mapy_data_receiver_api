@@ -1,3 +1,4 @@
+const dayjs = require("../utils/dateUtil");
 const { createDetectionFromData } = require("../models/Detection");
 const { getMaxListeners } = require("../repositories/config/dbConfig");
 const { insertBatchDetections, getLastDetection, } = require("../repositories/DetectionRepository");
@@ -31,9 +32,10 @@ const sevice = {
         console.log(error)
         throw new Error(error);
       }
+
       return {
         ok: true,
-        fecha: detection.fecha,
+        fecha: dayjs.utc(detection.fecha).format('YYYY-MM-DD HH:mm:ss'),
       }
     } catch (err) {
       const error = '[SERVICE] Error inesperado al procesar los datos'

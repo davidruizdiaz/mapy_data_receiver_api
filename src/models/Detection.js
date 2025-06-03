@@ -1,8 +1,11 @@
+const dayjs = require("../utils/dateUtil");
+
+
 class Detection {
   constructor(id_zona, clase, fecha) {
     this.id_zona = id_zona;
     this.clase = clase;
-    this.fecha = new Date(fecha);
+    this.fecha = dayjs.utc(fecha, 'YYYY-MM-DD HH:mm:ss').toDate();
   }
   static createDetectionFromData(data) {
     if (!data.id_zona || !data.clase || !data.fecha) {
