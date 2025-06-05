@@ -31,7 +31,6 @@ async function createDebStructure(config) {
       'package-lock.json',
       '.env_example',
       'knexfile.js',
-      'initdb.sh',
       'README.md',
     ];
 
