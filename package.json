@@ -1,7 +1,7 @@
 {
   "name": "mapy_data_receiver_api",
   "version": "1.0.0",
-  "description": "API para obtención de datos de cámara de seguimiento",
+  "description": "API para obtención de datos de cámara de conteo vehicular",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index",
