@@ -16,6 +16,4 @@ API para obtener datos del contador de vehículos.
 
 ### Construcción (build)
 
-Ejecute `node dist-builder.js` para generar una carpera dist/ para distribución.
-
-Luego, utilice url [Inno Setup](https://jrsoftware.org/isinfo.php) para empaquetar y distribuir.
+Ejecute `node build_scripts/builder` para generar una carpera dist/ para distribución.
